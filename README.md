@@ -1,111 +1,91 @@
-# Wheat Leaf Disease Detection using Deep Learning (VGG19)
-📌Project Overview
-This project focuses on the automated detection and classification of wheat leaf diseases using Convolutional Neural Networks (CNNs) with Transfer Learning (VGG19). It aims to support smart agriculture by enabling early disease diagnosis, minimizing manual errors, and promoting sustainable farming practices.
+### Wheat Leaf Disease Detection using Deep Learning (VGG19)
+## Project Overview
+This project focuses on the automated detection and classification of wheat leaf diseases using Convolutional Neural Networks (CNNs) with Transfer Learning (VGG19). It supports smart agriculture by enabling early disease diagnosis, reducing manual errors, and promoting sustainable farming.
 
-We classified wheat leaves into four categories:
+### Problem Statement
+Manual identification of crop diseases is often inaccurate, slow, and not scalable. This project addresses the challenge by developing a CNN-based model capable of classifying wheat leaf diseases from images taken in real-world conditions.
 
-Healthy
+### Key Concepts
+CNN (Convolutional Neural Networks) for automatic feature extraction
 
-Leaf Rust
+Transfer Learning with VGG19 pretrained on ImageNet
 
-Yellow Rust
+Data Augmentation to simulate diverse real-world environments
 
-Crown Rot
+Image Preprocessing and Model Evaluation using standard metrics
 
-🎯 Problem Statement
-Manual identification of crop diseases is time-consuming, labor-intensive, and often inaccurate. This project addresses the challenge by building a deep learning model capable of accurately classifying wheat leaf diseases from images—even under varying environmental conditions.
-
-🧠 Key Concepts
-CNNs (Convolutional Neural Networks) for feature extraction and classification
-
-Transfer Learning using VGG19 pre-trained on ImageNet
-
-Data Augmentation to simulate real-world conditions
-
-Explainable AI with Grad-CAM (optional)
-
-🛠️ Tech Stack
+### Tech Stack
 Language: Python
 
-Libraries: TensorFlow, Keras, OpenCV, NumPy, Matplotlib, Seaborn
+Libraries/Frameworks: TensorFlow, Keras, NumPy, OpenCV, Matplotlib, Seaborn
 
-Deployment: Streamlit (for building an interactive web app)
+Deployment Tool: Streamlit
 
-Development Environment: Google Colab & Jupyter Notebooks
+Development Platform: Google Colab / Jupyter Notebook
 
-📂 Dataset
-~3,700 images (Healthy, Leaf Rust, Yellow Rust, Crown Rot)
+### Dataset
+    ~3,700 labeled images (Healthy, Leaf Rust, Yellow Rust, Crown Rot)
 
-Sourced from Plant Village, Kaggle, and custom real-world images
+Data sourced from Kaggle
 
-Augmented to ~9,000+ images using:
+Augmented to ~9,000+ samples using:
 
-Rotation
+Rotation (±30°)
 
-Horizontal Flip
+Horizontal/Vertical Flip
 
-Zoom
+Zoom & Brightness adjustment
 
-Brightness Variation
+Noise addition
 
-Noise Injection
+### Model Architecture
+    Base Model: VGG19 (include_top=False)
 
-🔧 Model Architecture
-Base: VGG19 (pre-trained, include_top=False)
+    Custom Classifier Head:
 
-Custom Head:
+    AveragePooling2D
 
-AveragePooling2D
+    Flatten
 
-Flatten
+    Dense(512, activation='relu')
 
-Dense (512, ReLU)
+    Dropout(0.2)
 
-Dropout (0.2)
+    Dense(4, activation='softmax')
 
-Dense (4, Softmax)
+    Loss Function: Categorical Crossentropy
 
-Loss: Categorical Crossentropy
+    Optimizer: Adam (lr=1e-3)
 
-Optimizer: Adam (lr=1e-3)
+    Callbacks: EarlyStopping, ReduceLROnPlateau
 
-Callbacks: EarlyStopping, ReduceLROnPlateau
+### Performance Metrics
+    Validation Accuracy: ~95%
 
-📊 ### Results
-Validation Accuracy: ~95%
+    F1-Score: High across all four classes
 
-F1-Score: High across all classes
+    AUC-ROC: > 0.95
 
-AUC-ROC: > 0.95
+    Confusion Matrix: Clear separation with minimal misclassifications
 
-Confusion Matrix showed minimal class overlap
+### Deployment
+The model is deployed using Streamlit, offering:
 
-Successfully generalized to real-world wheat leaf images
+Simple UI for uploading wheat leaf images
 
-🌐 Deployment
-The model was deployed using Streamlit, allowing users to:
+Real-time prediction and confidence score
 
-Upload an image of a wheat leaf
+Accessible via web browser (desktop & mobile)
 
-Receive real-time classification results
+### Future Scope
+Deploy on mobile apps and edge devices (Raspberry Pi, Android)
+Expand to other crops like rice, maize, and vegetables
+Integrate with IoT and drone surveillance
+Implement Explainable AI (Grad-CAM)
+Add multilingual, farmer-friendly interfaces
 
-View the predicted class and confidence score
-
-💡 Future Scope
-Integration with drones and IoT devices for real-time field monitoring
-
-Model optimization for edge devices (mobile phones)
-
-Expansion to multiple crops and regional disease databases
-
-Incorporation of Explainable AI (Grad-CAM)
-
-Localization with multilingual user interfaces for farmers
-
-🙌 Team
+### Team Members
 Aruhi Pallavi
-
 Akash
-
 Abhishek Kushwaha
-Guided by: Mr. Vikas Jalodia, Department of CSE, GCET
+Supervisor: Mr. Vikas Jalodia, Department of CSE, GCET
