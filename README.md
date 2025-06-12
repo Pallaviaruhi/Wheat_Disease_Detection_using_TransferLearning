@@ -1,4 +1,4 @@
-### Wheat Leaf Disease Detection using Deep Learning (VGG19)
+# Wheat Leaf Disease Detection using Deep Learning (VGG19)
 ## Project Overview
 This project focuses on the automated detection and classification of wheat leaf diseases using Convolutional Neural Networks (CNNs) with Transfer Learning (VGG19). It supports smart agriculture by enabling early disease diagnosis, reducing manual errors, and promoting sustainable farming.
 
@@ -79,13 +79,20 @@ Accessible via web browser (desktop & mobile)
 
 ### Future Scope
 Deploy on mobile apps and edge devices (Raspberry Pi, Android)
+
 Expand to other crops like rice, maize, and vegetables
+
 Integrate with IoT and drone surveillance
+
 Implement Explainable AI (Grad-CAM)
+
 Add multilingual, farmer-friendly interfaces
 
 ### Team Members
 Aruhi Pallavi
+
 Akash
+
 Abhishek Kushwaha
+
 Supervisor: Mr. Vikas Jalodia, Department of CSE, GCET
